@@ -1,16 +1,16 @@
 
 package com.example.gittest;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.os.Build;
+import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -58,8 +58,19 @@ public class MainActivity extends ActionBarActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            
+            
+            rootView.findViewById(R.id.button1).setOnClickListener(onClick);;
             return rootView;
         }
+        
+        OnClickListener onClick = new OnClickListener() {
+            
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "ƒeƒXƒg", Toast.LENGTH_SHORT).show();
+            }
+        };
     }
 
 }
